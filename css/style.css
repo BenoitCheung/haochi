@@ -1,0 +1,1950 @@
+:root {
+--font1: 'Montserrat', sans-serif;
+--font2: 'Ma Shan Zheng', cursive;
+--primary: #FFDE03;
+--light: #F1F8FF;
+--dark: #171b27;
+--sichuangradient: linear-gradient(-180deg,#fa2e02,
+	#7d1801);
+--guangdonggradient: linear-gradient(-180deg, #FFE700,
+	#807300);
+--jiangsugradient: linear-gradient(-180deg, #3071fc,
+	#18387e);
+--fujiangradient: linear-gradient(-180deg, #5cfc05,
+	#2e7e03);
+--zhejianggradient: linear-gradient(-180deg, #00FF9C,
+	#00804e);
+--shandonggradient: linear-gradient(-180deg, #FFFF80,
+	#808040);
+--hunangradient: linear-gradient(-180deg, #ff0336,
+	#82011b);
+--anhuigradient: linear-gradient(-180deg, #D39D55,
+	#6a402b);
+--hakkagradient: linear-gradient(-180deg, #cf6138,
+	#8a4025);
+--yunnangradient: linear-gradient(-180deg, #ff6f61,
+	#873b33);
+--xinjianggradient: linear-gradient(-180deg, #549fe3,
+	#2d577d);
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.fw-medium {
+	font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+	font-weight: 700 !important;
+}
+
+.back-to-top {
+	position: fixed;
+	display: none;
+	right: 45px;
+	bottom: 45px;
+	z-index: 99;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: var(--font1);
+}
+
+.bg-dark {
+	background-color: var(--dark) !important;
+}
+
+hr {
+display: block;
+  height: 1px;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
+p {
+	text-align: justify-left;
+	font-size: 1.1rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.chinois {
+	font-family: var(--font2) !important;
+	white-space: nowrap !important;
+}
+
+.credit {
+	font-size: 12px;
+  color: gray;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* NAVBAR */
+
+nav {
+	background-color: var(--dark) !important;
+	font-family: var(--font1);
+	width: 100vw;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+	position: relative;
+	margin-left: 25px;
+	padding: 35px 0;
+	font-size: 15px;
+	color: var(--light) !important;
+	text-transform: uppercase;
+	font-weight: 500;
+	outline: none;
+	transition: .5s;
+}
+
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+	padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+	color: var(--primary) !important;
+}
+
+.navbar-dark .navbar-brand img {
+	max-height: 60px;
+	transition: .5s;
+}
+
+.sticky-top.navbar-dark .navbar-brand img {
+	max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+	.sticky-top.navbar-dark {
+		position: relative;
+	}
+
+	.navbar-dark .navbar-collapse {
+		margin-top: 15px;
+		border-top: 1px solid rgba(255, 255, 255 / .1);
+	}
+	.navbar-dark .navbar-nav .navlink,
+	.sticky-top.navbar-dark .navbar-nav .navlink {
+		padding: 10px 0;
+		margin-left: 0;
+	}
+
+	.navbar-dark .navbar-brand img {
+		max-height: 45px;
+	}
+	.itm-fluid {
+		width: 320px !important;
+	}
+	.mapdiv {
+	margin: auto;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 80vh;
+	resize: both;
+}
+	.sliding {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar-dark {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		background: transparent !important;
+	}
+
+	.sticky-top.navbar-dark {
+		position: fixed;
+		background: var(--dark) !important;
+	}
+	.itm-fluid {
+		width: 490px;
+	}
+	.recipe-card {
+	position: relative;
+	width: 50vw;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10rem auto;
+}
+	.mapdiv {
+	margin: auto;
+	box-sizing: border-box;
+	width: 60vw;
+	height: 80vh;
+	resize: both;
+}
+}
+
+
+/* MAP */
+
+.mapbody {
+	background-color: #171b27;
+	font-family: var(--font1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.province {
+	fill: #8ffcff !important
+}
+
+.mapdiv path {
+	fill-opacity: 75%;
+	stroke-width: 2px;
+	transition: fill-opacity 0.3s ease-in-out;
+}
+
+.mapdiv :hover + .text_region {
+	opacity: 1;
+}
+
+.mapdiv :hover {
+	fill-opacity: 100%;
+	stroke-width:2.5;
+}
+
+
+.text_region {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease-in-out;
+	font-family: var(--font2);
+	font-size: 30px;
+	fill: black;
+	stroke-width:0;
+	text-shadow: white 0 0 10px;
+}
+
+.sliding {
+	position: relative;
+	overflow: hidden;
+	width: 500px;
+	min-width: 500px;
+	height: 100%;
+	max-width: 500px;
+}
+
+#slide {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: all 0.5s ease;
+}
+
+.content {
+	position: absolute;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	font-size: 1.8rem;
+	padding: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transform: translateX(100%);
+	transition: all 0.5s ease;
+	overflow: hidden;
+	color: #fff;
+	z-index: 9999;
+}
+
+.content::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+.content::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	filter: blur(30px);
+}
+
+.contentbg {
+	position: absolute;
+	inset: 0 0 0 6px;
+	z-index: 2;
+	background: rgb(0, 0, 0, 0.7);
+}
+
+.contentinfo {
+	position: relative;
+	padding: 0 30px 40px;
+	color: #fff;
+	z-index: 3;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) ;
+}
+.contentinfo hr {
+	border-top: 3px solid #fff;
+}
+
+#sichuan {
+	fill:#fa2e02;
+}
+
+#chongqing {
+	fill:#fa2e02;
+}
+
+#sichuancontent {
+	background: var(--sichuangradient);
+}
+
+#sichuancontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px#fa2e02,
+      0 0 82px#fa2e02,
+      0 0 92px#fa2e02;
+}
+
+#sichuancontent hr {
+	border-top: 3px solid#fa2e02;
+}
+
+#sichuancontent #slideshow {
+	border: 2px solid#fa2e02;
+	box-shadow: 
+              0 0 2rem#fa2e02,
+              0 0 0.8rem#fa2e02,
+              0 0 2.8rem#fa2e02,
+              inset 0 0 1.3rem#fa2e02;
+}
+
+
+#guangdong {
+	fill: #FFE700;
+}
+
+#guangdongcontent {
+	background: var(--guangdonggradient);
+}
+
+#guangdongcontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #FFE700,
+      0 0 82px #FFE700,
+      0 0 92px #FFE700;
+}
+
+#guangdongcontent hr {
+	border-top: 3px solid #FFE700;
+}
+
+#guangdongcontent #slideshow {
+	border: 2px solid #FFE700;
+	box-shadow:
+              0 0 2rem #FFE700,
+              0 0 0.8rem #FFE700,
+              0 0 2.8rem #FFE700,
+              inset 0 0 1.3rem #FFE700;
+}
+
+#jiangsu {
+	fill: #3071fc;
+}
+
+#jiangsucontent {
+	background: var(--jiangsugradient);
+}
+
+#jiangsucontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #3071fc,
+      0 0 82px #3071fc,
+      0 0 92px #3071fc;
+}
+
+
+#jiangsucontent hr {
+	border-top: 3px solid #3071fc;
+}
+
+#jiangsucontent #slideshow {
+	border: 2px solid #3071fc;
+	box-shadow: 
+              0 0 2rem #3071fc,
+              0 0 0.8rem #3071fc,
+              0 0 2.8rem #3071fc,
+              inset 0 0 1.3rem #3071fc;	
+}
+
+#fujian {
+	fill: #5cfc05;
+}
+
+#fujiancontent {
+	background: var(--fujiangradient);
+}
+
+#fujiancontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #5cfc05,
+      0 0 82px #5cfc05,
+      0 0 92px #5cfc05;
+}
+
+#fujiancontent hr {
+	border-top: 3px solid #5cfc05;
+}
+
+#fujiancontent #slideshow {
+	border: 2px solid #5cfc05;
+	box-shadow: 
+              0 0 2rem #5cfc05,
+              0 0 0.8rem #5cfc05,
+              0 0 2.8rem #5cfc05,
+              inset 0 0 1.3rem #5cfc05;	
+}
+
+#zhejiang {
+	fill: #00FF9C;
+}
+
+#zhejiangcontent {
+	background: var(--zhejianggradient);
+}
+
+#zhejiangcontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #00FF9C,
+      0 0 82px #00FF9C,
+      0 0 92px #00FF9C;
+}
+
+#zhejiangcontent hr {
+	border-top: 3px solid #00FF9C;
+}
+
+#zhejiangcontent #slideshow {
+	border: 2px solid #00FF9C;
+	box-shadow: 
+              0 0 2rem #00FF9C,
+              0 0 0.8rem #00FF9C,
+              0 0 2.8rem #00FF9C,
+              inset 0 0 1.3rem #00FF9C;	
+}
+
+#shandong {
+	fill: #FFFF62;
+}
+
+#shandongcontent {
+	background: var(--shandonggradient);
+}
+
+#shandongcontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #FFFF80,
+      0 0 82px #FFFF80,
+      0 0 92px #FFFF80;
+}
+
+#shandongcontent hr {
+	border-top: 3px solid #FFFF80;
+}
+
+#shandongcontent #slideshow {
+	border: 2px solid #FFFF80;
+	box-shadow: 
+              0 0 2rem #FFFF80,
+              0 0 0.8rem #FFFF80,
+              0 0 2.8rem #FFFF80,
+              inset 0 0 1.3rem #FFFF80;
+}
+
+#hunan {
+	fill: #ff0336;
+}
+
+#hunancontent {
+	background: var(--hunangradient);
+}
+
+#hunancontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #ff0336,
+      0 0 82px #ff0336,
+      0 0 92px #ff0336;
+}
+
+#hunancontent hr {
+	border-top: 3px solid #ff0336;
+}
+
+#hunancontent #slideshow {
+	border: 2px solid #ff0336;
+	box-shadow: 
+              0 0 2rem #ff0336,
+              0 0 0.8rem #ff0336,
+              0 0 2.8rem #ff0336,
+              inset 0 0 1.3rem #ff0336;
+}
+
+#anhui {
+	fill: #D39D55;
+}
+
+#anhuicontent {
+	background: var(--anhuigradient);
+}
+
+#anhuicontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #D39D55,
+      0 0 82px #D39D55,
+      0 0 92px #D39D55;
+}
+
+#anhuicontent hr {
+	border-top: 3px solid #D39D55;
+}
+
+#anhuicontent #slideshow {
+	border: 2px solid #D39D55;
+	box-shadow:
+              0 0 2rem #D39D55,
+              0 0 0.8rem #D39D55,
+              0 0 2.8rem #D39D55,
+              inset 0 0 1.3rem #D39D55;
+}
+
+#yunnan {
+	fill: #ff6f61;
+}
+
+#yunnancontent {
+	background: var(--yunnangradient);
+}
+
+#yunnancontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #ff6f61,
+      0 0 82px #ff6f61,
+      0 0 92px #ff6f61;
+}
+
+#yunnancontent hr {
+	border-top: 3px solid #ff6f61;
+}
+
+#yunnancontent #slideshow {
+	border: 2px solid #ff6f61;
+	box-shadow:
+              0 0 2rem #ff6f61,
+              0 0 0.8rem #ff6f61,
+              0 0 2.8rem #ff6f61,
+              inset 0 0 1.3rem #ff6f61;
+}
+
+#xinjiang {
+	fill: #549fe3;
+}
+
+#xinjiangcontent {
+	background: var(--xinjianggradient);
+}
+
+#xinjiangcontent h2 {
+	color: #fff;
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #549fe3,
+      0 0 82px #549fe3,
+      0 0 92px #549fe3;
+}
+
+#xinjiangcontent hr {
+	border-top: 3px solid #549fe3;
+}
+
+#xinjiangcontent #slideshow {
+	border: 2px solid #549fe3;
+	box-shadow:
+              0 0 2rem #549fe3,
+              0 0 0.8rem #549fe3,
+              0 0 2.8rem #549fe3,
+              inset 0 0 1.3rem #549fe3;
+}
+
+#slideshow {
+    width:400px;
+    height: 300px;
+    margin:0 auto;
+    overflow:hidden;
+    margin-top: 50px;
+}
+
+.slidecontent {
+    width:1600px; /* 300 x 4 */
+    position:relative;
+    -webkit-animation:slide 12s ease-in-out infinite;
+    -moz-animation:slide 12s ease-in-out infinite;
+    -ms-animation:slide 12s ease-in-out infinite;
+    -o-animation:slide 12s ease-in-out infinite;
+    animation:slide 12s ease-in-out infinite;
+}
+
+.slidecontent div {
+    width:400px;
+    height:300px;
+    float:left;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideitem {
+	height: 300px;
+	width: auto;
+}
+
+
+@-webkit-keyframes slide {
+    0% {left:0;}
+    25% {left:-400px;}
+    50% {left:-800px;}
+    75% {left:-1200px;}
+    100% {left:0;}
+}
+@-moz-keyframes slide {
+    0% {left:0;}
+    25% {left:-400px;}
+    50% {left:-800px;}
+    75% {left:-1200px;}
+    100% {left:0;}
+}
+@-ms-keyframes slide {
+    0% {left:0;}
+    25% {left:-400px;}
+    50% {left:-800px;}
+    75% {left:-1200px;}
+    100% {left:0;}
+}
+@-o-keyframes slide {
+    0% {left:0;}
+    25% {left:-400px;}
+    50% {left:-800px;}
+    75% {left:-1200px;}
+    100% {left:0;}
+}
+@keyframes slide {
+    0% {left:0;}
+    25% {left:-400px;}
+    50% {left:-800px;}
+    75% {left:-1200px;}
+    100% {left:0;}
+}
+
+
+/* RECIPE PAGE */
+
+.hero-header {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.hero-header img {
+	animation: imgRotate 50s linear infinite;
+
+}
+
+@keyframes imgRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.time {
+	display: flex;
+	color: white;
+}
+
+.time div {
+	margin: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.time h2 {
+	font-size: 1.15rem;
+}
+
+.time p {
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.recipe-name {
+	color: #fff;
+}
+
+/* BUTTON */
+
+.downbtn {
+  width: 260px;
+  height: 56px;
+  overflow: hidden;
+  border: none;
+  color: #fff;
+  background: none;
+  position: relative;
+  padding-bottom: 2em;
+  cursor: pointer;
+}
+
+.downbtn > div,
+.downbtn > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.downbtn:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  background: currentColor;
+  transition: transform 0.25s ease-out;
+}
+
+.downbtn:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.downbtn .clone > *,
+.downbtn .text > * {
+  opacity: 1;
+  font-size: 1.3rem;
+  transition: 0.2s;
+  margin-left: 4px;
+}
+
+.downbtn .clone > * {
+  transform: translateY(60px);
+}
+
+.downbtn:hover .clone > * {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.downbtn:hover .text > * {
+  opacity: 1;
+  transform: translateY(-60px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.downbtn:hover .clone > :nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+.downbtn:hover .clone > :nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.downbtn:hover .clone > :nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.downbtn:hover .clone > :nth-child(4) {
+  transition-delay: 0.3s;
+}
+/* icon style and hover */
+.downbtn svg {
+  width: 20px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(50deg);
+  transition: 0.2s ease-out;
+}
+
+.downbtn:hover svg {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+
+/* RECIPE CARD */
+
+.recipe-summ {
+		position: relative;
+  	margin: 120px auto 20px auto;
+  	overflow: visible;
+  	margin: 20px auto;
+  	font-family: inherit;
+  	font-size: 16px;
+  	line-height: 1.6em;
+  	max-width: 700px;
+  	padding: 5px;
+  	border-radius: 20px;
+  	color: white;
+}
+
+.recipe-summ-bg {
+	  background: white;
+  	width: 100%;
+  	height: 100%;
+  	border-radius: 17px;
+}
+
+.recipe-summ-header {
+  	margin: 0 -10px 10px -10px;
+  	padding: 130px 10px 10px 10px;
+  	text-align: center;
+}
+
+.recipe-summ-img {
+  	position: absolute;
+  	margin-top: -100px;
+ 	  margin-left: -100px;
+  	left: 50%;
+  	background: #7d1801;
+  	padding: 5px;
+  	border-radius: 20px;
+}
+
+.recipe-summ-photo {
+	border-radius: 17px;
+}
+
+.recipe-summ-times-container {
+	margin-top: 1em;
+	display: flex;
+	justify-content: space-around;
+}
+
+.recipe-summ-content {
+	overflow: hidden;
+  padding: 0 10px 10px 10px;
+  border: 0;
+ 	border-radius: 0px;
+}
+
+.recipe-summ-title {
+	font-weight: bold;
+}
+
+.recipe-summ-ingr {
+	font-style: normal;
+ 	font-weight: 400;
+ 	text-transform: none;
+}
+
+.recipe-summ-subtitle {
+	margin-top: 1.2em;
+}
+
+
+/* SICHUAN RECIPE STYLE*/
+
+.sichuanheader {
+	background: linear-gradient(rgba(43, 15, 23, 0.9), rgba(43, 15, 23, 0.9)), url(../img/sichuan1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.sichuantitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px#fa2e02,
+      0 0 82px#fa2e02,
+      0 0 92px#fa2e02;
+}
+
+.text-sichuan {
+	color:#fa2e02 !important;
+}
+
+.border-sichuan {
+	border-color:#fa2e02 !important;
+}
+
+.recipe-summ-sichuan {
+  	background: #7d1801;
+  	box-shadow: rgba(250, 46, 2, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-sichuan {
+	background: rgba(43, 15, 23, 0.9);
+}
+
+
+/* GUANGDONG RECIPE STYLE*/
+
+.guangdongheader {
+	background: linear-gradient(rgba(43, 42, 15, 0.9), rgba(43, 42, 15, 0.9)), url(../img/guangdong1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.guangdongtitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #FFE700,
+      0 0 82px #FFE700,
+      0 0 92px #FFE700;
+}
+
+.guangdongcard {
+	background: var(--guangdonggradient);
+}
+
+.guangdongcard::before {
+	background: var(--guangdonggradient);
+}
+
+.guangdongcard::after {
+	background: var(--guangdonggradient);
+}
+
+.text-guangdong {
+	color: #FFE700 !important;
+}
+
+.border-guangdong {
+	border-color: #FFE700 !important;
+}
+
+.recipe-summ-guangdong {
+  	background: #807300;
+  	box-shadow: rgba(255, 231, 0, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-guangdong {
+	background: rgba(43, 42, 15, 0.9);
+}
+
+
+/* SHANDONG RECIPE STYLE*/
+
+.shandongheader {
+	background: linear-gradient(rgba(43, 42, 15, 0.9), rgba(43, 42, 15, 0.9)), url(../img/shandong1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.shandongtitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #FFFF80,
+      0 0 82px #FFFF80,
+      0 0 92px #FFFF80;
+}
+
+.shandongcard {
+	background: var(--shandonggradient);
+}
+
+.shandongcard::before {
+	background: var(--shandonggradient);
+}
+
+.shandongcard::after {
+	background: var(--shandonggradient);
+}
+
+.text-shandong {
+	color: #FFFF62 !important;
+}
+
+.border-shandong {
+	border-color: #FFFF80 !important;
+}
+
+.recipe-summ-shandong {
+  	background: #808040;
+  	box-shadow: rgba(255, 255, 128, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-shandong {
+	background: rgba(43, 42, 15, 0.9);
+}
+
+/* HUNAN RECIPE STYLE*/
+
+.hunanheader {
+	background: linear-gradient(rgba(43, 15, 23, 0.9), rgba(43, 15, 23, 0.9)), url(../img/hunan1.jpeg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.hunantitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #ff0336,
+      0 0 82px #ff0336,
+      0 0 92px #ff0336;
+}
+
+.hunancard {
+	background: var(--hunangradient);
+}
+
+.hunancard::before {
+	background: var(--hunangradient);
+}
+
+.hunancard::after {
+	background: var(--hunangradient);
+}
+
+.text-hunan {
+	color: #ff0336 !important;
+}
+
+.border-hunan {
+	border-color: #ff0336 !important;
+}
+
+.recipe-summ-hunan {
+  	background: #82011b;
+  	box-shadow: rgba(255, 3, 54, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-hunan {
+	background: rgba(43, 15, 23, 0.9);
+}
+
+/* FUJIAN RECIPE STYLE*/
+
+.fujianheader {
+	background: linear-gradient(rgba(15, 43, 23, 0.9), rgba(15, 43, 23, 0.9)), url(../img/fujian1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.fujiantitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #5cfc05,
+      0 0 82px #5cfc05,
+      0 0 92px #5cfc05;
+}
+
+.fujiancard {
+	background: var(--fujiangradient);
+}
+
+.fujiancard::before {
+	background: var(--fujiangradient);
+}
+
+.fujiancard::after {
+	background: var(--fujiangradient);
+}
+
+.text-fujian {
+	color: #5cfc05 !important;
+}
+
+.border-fujian {
+	border-color: #5cfc05 !important;
+}
+
+.recipe-summ-fujian {
+  	background: #2e7e03;
+  	box-shadow: rgba(92, 252, 5, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-fujian {
+	background: rgba(15, 43, 23, 0.9);
+}
+
+/* JIANGSU RECIPE STYLE*/
+
+.jiangsuheader {
+	background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)), url(../img/jiangsu1.JPG);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.jiangsutitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #3071fc,
+      0 0 82px #3071fc,
+      0 0 92px #3071fc;
+}
+
+.jiangsucard {
+	background: var(--jiangsugradient);
+}
+
+.jiangsucard::before {
+	background: var(--jiangsugradient);
+}
+
+.jiangsucard::after {
+	background: var(--jiangsugradient);
+}
+
+.text-jiangsu {
+	color: #3071fc !important;
+}
+
+.border-jiangsu {
+	border-color: #3071fc !important;
+}
+
+.recipe-summ-jiangsu {
+  	background: #18387e;
+  	box-shadow: rgba(48, 113, 252, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-jiangsu {
+	background: rgba(15, 23, 43, 0.9);
+}
+
+/* ZHEJIANG RECIPE STYLE*/
+
+.zhejiangheader {
+	background: linear-gradient(rgba(15, 43, 23, 0.9), rgba(15, 43, 23, 0.9)), url(../img/zhejiang1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.zhejiangtitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #00FF9C,
+      0 0 82px #00FF9C,
+      0 0 92px #00FF9C;
+}
+
+.zhejiangcard {
+	background: var(--zhejianggradient);
+}
+
+.zhejiangcard::before {
+	background: var(--zhejianggradient);
+}
+
+.zhejiangcard::after {
+	background: var(--zhejianggradient);
+}
+
+.text-zhejiang {
+	color: #00FF9C !important;
+}
+
+.border-zhejiang {
+	border-color: #00FF9C !important;
+}
+
+.recipe-summ-zhejiang {
+  	background: #00804e;
+  	box-shadow: rgba(0, 128, 78, 0.5) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-zhejiang {
+	background: rgba(15, 43, 23, 0.9);
+}
+
+/* ANHUI RECIPE STYLE*/
+
+.anhuiheader {
+	background: linear-gradient(rgba(45, 43, 23, 0.9), rgba(45, 43, 23, 0.9)), url(../img/anhui1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.anhuititle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #D39D55,
+      0 0 82px #D39D55,
+      0 0 92px #D39D55;
+}
+
+.anhuicard {
+	background: var(--anhuigradient);
+}
+
+.anhuicard::before {
+	background: var(--anhuigradient);
+}
+
+.anhuicard::after {
+	background: var(--anhuigradient);
+}
+
+.text-anhui {
+	color: #D39D55 !important;
+}
+
+.border-anhui {
+	border-color: #D39D55 !important;
+}
+
+.recipe-summ-anhui {
+  	background: #6a402b;
+  	box-shadow: rgba(0, 255, 156, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-anhui {
+	background: rgba(45, 43, 23, 0.9);
+}
+
+/* HAKKA RECIPE STYLE*/
+
+.hakkaheader {
+	background: linear-gradient(rgba(45, 33, 23, 0.9), rgba(45, 33, 23, 0.9)), url(../img/hakka1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.hakkatitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #cf6138,
+      0 0 82px #cf6138,
+      0 0 92px #cf6138;
+}
+
+.hakkacard {
+	background: var(--hakkagradient);
+}
+
+.hakkacard::before {
+	background: var(--hakkagradient);
+}
+
+.hakkacard::after {
+	background: var(--hakkagradient);
+}
+
+.text-hakka {
+	color: #cf6138 !important;
+}
+
+.border-hakka {
+	border-color: #cf6138 !important;
+}
+
+.recipe-summ-hakka {
+  	background: #8a4025;
+  	box-shadow: rgba(207, 97, 56, 0.3) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-hakka {
+	background: rgba(45, 33, 23, 0.9);
+}
+
+/* yunnan RECIPE STYLE*/
+
+.yunnanheader {
+	background: linear-gradient(rgba(43, 15, 23, 0.9), rgba(43, 15, 23, 0.9)), url(../img/yunnan1.jpeg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.yunnantitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #ff6f61,
+      0 0 82px #ff6f61,
+      0 0 92px #ff6f61;
+}
+
+.yunnancard {
+	background: var(--yunnangradient);
+}
+
+.yunnancard::before {
+	background: var(--yunnangradient);
+}
+
+.yunnancard::after {
+	background: var(--yunnangradient);
+}
+
+.text-yunnan {
+	color: #ff6f61 !important;
+}
+
+.border-yunnan {
+	border-color: #ff6f61 !important;
+}
+
+.recipe-summ-yunnan {
+  	background: #873b33;
+  	box-shadow: rgba(255, 111, 97, 0.2) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-yunnan {
+	background: rgba(43, 15, 23, 0.9);
+}
+
+/* xinjiang RECIPE STYLE*/
+
+.xinjiangheader {
+	background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)), url(../img/xinjiang1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.xinjiangtitle {
+	text-shadow:
+      0 0 7px #fff,
+      0 0 42px #549fe3,
+      0 0 82px #549fe3,
+      0 0 92px #549fe3;
+}
+
+.xinjiangcard {
+	background: var(--xinjianggradient);
+}
+
+.xinjiangcard::before {
+	background: var(--xinjianggradient);
+}
+
+.xinjiangcard::after {
+	background: var(--xinjianggradient);
+}
+
+.text-xinjiang {
+	color: #549fe3 !important;
+}
+
+.border-xinjiang {
+	border-color: #549fe3 !important;
+}
+
+.recipe-summ-xinjiang {
+  	background: #2d577d;
+  	box-shadow: rgba(84, 159, 227, 0.3) 0 15px 30px -5px;
+}
+
+.recipe-summ-bg-xinjiang {
+	background: rgba(15, 23, 43, 0.9);
+}
+
+/* RECIPES PAGE */
+
+/*********HEADING SECTION HEADING*********/
+.heading-section {
+	padding-bottom: 100px;
+}
+.heading-section h3 {
+	font-size: 30px;
+	text-align: center;
+	color: #b80818;
+	margin: 0px;
+}
+.heading-section h2 {
+	text-align: center;
+	color: black;
+	font-size: 44px;
+	margin-bottom: 0px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	word-spacing: 1px;
+}
+.heading-borders {
+	text-align: center;
+	justify-content: center;
+	display: flex;
+}
+.heading-borders span {
+	border: 1px solid red;
+	width: 5%;
+	margin-bottom: 20px;
+}
+@media screen and (max-width:768px) {
+	.heading-section h2 {
+		font-size: 30px;
+		margin-bottom: 5px;
+	}
+	.heading-borders span {
+		width: 8%;
+	}
+}
+@media screen and (max-width:500px) {
+	.heading-borders span {
+		width: 25%;
+	}
+	.heading-section h2 {
+		font-size: 30px;
+	}
+}
+/*******RECIPES LIST********/
+
+
+.recipes-header {
+	background: linear-gradient(rgba(15, 23, 43, 0.95), rgba(15, 23, 43, 0.95)), url(../img/recipes.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+#recipeList {
+	display: flex;
+	padding: 0;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.recipeitem {
+	display: block;
+}
+
+
+
+.search-container {
+	width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+}
+
+    #searchBar {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: 2px solid white;
+        border-radius: 30px;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #searchBar:focus {
+        border-color: var(--primary);
+        box-shadow: 0px 0px 10px rgba(255, 222, 3, 0.6);
+    }
+
+
+.famous-product {
+    position: relative;
+    margin: 12px;
+    padding: 12px;
+    padding-bottom: 50px;
+    border-radius: 12px;
+    background: var(--dark);
+    margin-bottom: 30px;
+    height: 400px;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    text-align: center;
+    z-index: 1;
+}
+
+.famous-product::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background: #8ffcff;
+    border-radius: 16px;
+    transition: all .4s ease-in-out;
+    z-index: -1; 
+}
+
+.famous-product::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--dark); 
+    border-radius: 12px;
+    z-index: -1;
+}
+
+
+.famous-product:hover::before {
+    filter: brightness(1.2); 
+    transition: filter 0.3s ease-in-out;
+}
+
+.famous-product:hover {
+  transform: scale(1.05);
+}
+
+.famous-product-firsthalf {
+	height: 70%;
+	margin-bottom: 8px;
+	position: relative;
+}
+
+.famous-product-secondhalf {
+	height: 30%;
+}
+
+.famous-product img {
+	max-width: 95%;
+	max-height: 95%;
+	animation: imgRotate 50s linear infinite;
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+  margin: auto;
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.famous-product h4 {
+	font-size: 17px;
+	color: #FFFDD0;
+}
+
+.famous-product h3 {
+	margin-bottom: 20px;
+	font-size: 26px;
+	font-weight: 600;
+	color: var(--light);
+}
+
+
+
+.famous-product-sichuan::before {
+	background: var(--sichuangradient);
+}
+
+.famous-product-guangdong::before {
+	background: var(--guangdonggradient);
+}
+
+.famous-product-hunan::before {
+	background: var(--hunangradient);
+}
+
+.famous-product-zhejiang::before {
+	background: var(--zhejianggradient);
+}
+
+.famous-product-shandong::before {
+	background: var(--shandonggradient);
+}
+
+.famous-product-fujian::before {
+	background: var(--fujiangradient);
+}
+
+.famous-product-jiangsu::before {
+	background: var(--jiangsugradient);
+}
+
+.famous-product-xinjiang::before {
+	background: var(--xinjianggradient);
+}
+
+.famous-product-hakka::before {
+	background: var(--hakkagradient);
+}
+
+.famous-product-yunnan::before {
+	background: var(--yunnangradient);
+}
+
+.famous-product-sichuan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #fa2e02,
+      0 0 16px #fa2e02,
+      0 0 24px #fa2e02;
+}
+
+.famous-product-guangdong:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #FFE700,
+      0 0 16px #FFE700,
+      0 0 24px #FFE700;
+}
+
+.famous-product-hunan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #ff0336,
+      0 0 16px #ff0336,
+      0 0 24px #ff0336;
+}
+
+.famous-product-zhejiang:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #00FF9C,
+      0 0 16px #00FF9C,
+      0 0 24px #00FF9C;
+}
+
+.famous-product-shandong:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #FFFF80,
+      0 0 16px #FFFF80,
+      0 0 24px #FFFF80;
+}
+
+.famous-product-fujian:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #5cfc05,
+      0 0 16px #5cfc05,
+      0 0 24px #5cfc05;
+}
+
+.famous-product-jiangsu:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #3071fc,
+      0 0 16px #3071fc,
+      0 0 24px #3071fc;
+}
+
+.famous-product-xinjiang:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #549fe3,
+      0 0 16px #549fe3,
+      0 0 24px #549fe3;
+}
+
+.famous-product-hakka:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #cf6138,
+      0 0 16px #cf6138,
+      0 0 24px #cf6138;
+}
+
+.famous-product-yunnan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #ff6f61,
+      0 0 16px #ff6f61,
+      0 0 24px #ff6f61;
+}
+
+/* CUISINES REGIONALES PAGE */
+
+.banquetheader {
+	background: linear-gradient(rgba(43, 42, 15, 0.8), rgba(43, 42, 15, 0.9)), url(../img/banquet.jpg);
+	background-position: top top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+.lanternesheader {
+	background: linear-gradient(rgba(43, 12, 15, 0.8), rgba(43, 12, 15, 0.9)), url(../img/lanternes.jpg);
+	background-position: top top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: var(--font1);
+}
+
+
+.regionitem {
+	height: 80px;
+	align-items: center;
+	text-align: left;
+	margin-bottom: 40px;
+	display: flex;
+	border-radius: 15px;
+	transition: .5s ease;
+	color: inherit;
+	position: relative;
+	z-index: 1;
+}
+
+.regionitem:hover::before {
+    filter: brightness(1.2); 
+    transition: filter 0.3s ease-in-out;
+}
+
+.regionitem:hover {
+  transform: scale(1.05);
+}
+
+.regionitem::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background: #8ffcff;
+    border-radius: 16px;
+    transition: all .4s ease-in-out;
+    z-index: -1; 
+}
+
+.regionitem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 43, 0.7); 
+    border-radius: 12px;
+    z-index: -1;
+}
+
+
+.regionitem-sichuan::before {
+	background: var(--sichuangradient);
+}
+
+.regionitem-guangdong::before {
+	background: var(--guangdonggradient);
+}
+
+.regionitem-hunan::before {
+	background: var(--hunangradient);
+}
+
+.regionitem-zhejiang::before {
+	background: var(--zhejianggradient);
+}
+
+.regionitem-shandong::before {
+	background: var(--shandonggradient);
+}
+
+.regionitem-fujian::before {
+	background: var(--fujiangradient);
+}
+
+.regionitem-jiangsu::before {
+	background: var(--jiangsugradient);
+}
+
+.regionitem-anhui::before {
+	background: var(--anhuigradient);
+}
+
+.regionitem-hakka::before {
+	background: var(--hakkagradient);
+}
+
+.regionitem-yunnan::before {
+	background: var(--yunnangradient);
+}
+
+.regionitem-xinjiang::before {
+	background: var(--xinjianggradient);
+}
+
+.regionitem-sichuan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #fa2e02,
+      0 0 16px #fa2e02,
+      0 0 24px #fa2e02;
+}
+
+.regionitem-guangdong:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #FFE700,
+      0 0 16px #FFE700,
+      0 0 24px #FFE700;
+}
+
+.regionitem-hunan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #ff0336,
+      0 0 16px #ff0336,
+      0 0 24px #ff0336;
+}
+
+.regionitem-zhejiang:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #00FF9C,
+      0 0 16px #00FF9C,
+      0 0 24px #00FF9C;
+}
+
+.regionitem-shandong:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #FFFF80,
+      0 0 16px #FFFF80,
+      0 0 24px #FFFF80;
+}
+
+.regionitem-fujian:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #5cfc05,
+      0 0 16px #5cfc05,
+      0 0 24px #5cfc05;
+}
+
+.regionitem-jiangsu:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #3071fc,
+      0 0 16px #3071fc,
+      0 0 24px #3071fc;
+}
+
+.regionitem-anhui:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #D39D55,
+      0 0 16px #D39D55,
+      0 0 24px #D39D55;
+}
+
+.regionitem-hakka:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #cf6138,
+      0 0 16px #cf6138,
+      0 0 24px #cf6138;
+}
+
+.regionitem-yunnan:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #FF6F61,
+      0 0 16px #FF6F61,
+      0 0 24px #FF6F61;
+}
+
+.regionitem-xinjiang:hover::before {
+	box-shadow:
+      0 0 4px #fff,
+      0 0 8px #549fe3,
+      0 0 16px #549fe3,
+      0 0 24px #549fe3;
+}
+
+.regionlist {
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.regiontitle {
+	margin-left: 10%;
+}
+
+.regionitem h2 {
+	margin-left: 10%;
+}
+
